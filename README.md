@@ -1,6 +1,6 @@
 # Calendar Complete
 
-A dynamic and comprehensive [calendar management system](https://josephtnguyen.github.io/calendar-complete/) that provides a complete view of one's schedule.
+A dynamic and comprehensive [calendar management system](https://plan-day.vercel.app/) that provides a complete view of one's schedule.
 
 ![calendar1](https://user-images.githubusercontent.com/59109937/128261461-966ed389-54ac-4138-a5a9-4938600f7dbb.gif)
 
@@ -34,4 +34,4 @@ No assembly required!  The files in this repository are all you need to run the 
 
 ## Live
 
-Check out my app [here](https://josephtnguyen.github.io/calendar-complete/)!
+Check out my app [here](https://plan-day.vercel.app/)!
