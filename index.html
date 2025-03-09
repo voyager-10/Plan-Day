@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Calendar Complete" />
+  <meta property="og:url" content="https://josephtnguyen.github.io/calendar-complete/" />
+  <meta property="og:image" content="https://res.cloudinary.com/softwarepundit/image/upload/c_lfill,dpr_1.0,f_auto,h_1600,q_auto,w_1600/v1/software/calendar-icon" />
+  <meta property="og:description" content="A dynamic and comprehensive calendar management system that provides a complete view of one's schedule." />
+  <title>Calendar Complete</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="icon" href="images/calendar.svg">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="complete-container">
+    <!-- Calendar -->
+    <div class="calendar-container">
+      <header class="middle">
+        <div class="col-100 row">
+          <!-- Left Button -->
+          <div class="col-20 middle">
+            <button class="left-arrow-button"></button>
+          </div>
+          <!-- Month Year -->
+          <div class="col-60 middle">
+            <h1 class="header-month-year">
+              <span>January</span> <span>2021</span>
+            </h1>
+          </div>
+          <!-- Right Button -->
+          <div class="col-20 middle">
+            <button class="right-arrow-button"></button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <!-- Days of Week -->
+        <div class="row center">
+          <div class="col-14">
+            <h6 class="day-of-week">Sun</h6>
+          </div>
+          <div class="col-14">
+            <h6 class="day-of-week">Mon</h6>
+          </div>
+          <div class="col-14">
+            <h6 class="day-of-week">Tue</h6>
+          </div>
+          <div class="col-14">
+            <h6 class="day-of-week">Wed</h6>
+          </div>
+          <div class="col-14">
+            <h6 class="day-of-week">Thu</h6>
+          </div>
+          <div class="col-14">
+            <h6 class="day-of-week">Fri</h6>
+          </div>
+          <div class="col-14">
+            <h6 class="day-of-week">Sat</h6>
+          </div>
+        </div>
+
+        <!-- Calendar Squares -->
+        <div class="row">
+          <div class="col-100 calendar-squares">
+
+          </div>
+        </div>
+      </main>
+
+      <footer></footer>
+    </div>
+
+    <!-- Checklist -->
+    <div class="checklist-container max-height">
+      <!-- Travel Modal -->
+      <div class="travel-modal-container middle hidden">
+        <form class="travel-modal-form">
+          <!-- Heading -->
+          <div class="row">
+            <div class="col-100 modal-header">
+              <button class="travel-button cancel dark-blue">Cancel</button>
+              <button class="travel-button save dark-blue">Save</button>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="row">
+            <div class="col-100 travel-modal-body">
+              <label>
+                <h1 class="modal-heading destination-question dark-blue hidden">What city are you traveling to?</h1>
+                <h1 class="modal-heading hometown-question dark-blue">What city do you live in?</h1>
+
+                <div class="modal-prompt">
+                  <img src="images/airplane.svg" alt="Airplane" class="modal-icon destination-icon hidden">
+                  <img src="images/house.svg" alt="House" class="modal-icon hometown-icon">
+                  <input required type="text" placeholder="Los Angeles" class="modal-input dark-gray">
+                </div>
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Event Modal -->
+      <div class="event-modal-container middle hidden">
+        <form class="event-modal-form">
+          <!-- Heading -->
+          <div class="row">
+            <div class="col-100 modal-header">
+              <button class="event-button cancel dark-blue">Cancel</button>
+              <button class="event-button save-plus dark-blue">Save+</button>
+              <button class="event-button save dark-blue">Save</button>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <!-- Type Buttons -->
+          <div class="row">
+            <div class="col-100 event-modal-buttons">
+              <button class="event-modal-view event modal-selected">Event</button>
+              <button class="event-modal-view birthday">Birthday</button>
+              <button class="event-modal-view hangout">Hangout</button>
+              <button class="event-modal-view meeting">Meeting</button>
+            </div>
+          </div>
+          <!-- Inputs -->
+          <div class="row">
+            <div class="col-100 event-modal-body">
+              <!-- Text -->
+              <h1 class="modal-heading event-modal-date dark-blue">
+                <span>January</span> <span>1</span>, <span>2021</span>
+              </h1>
+
+              <label>
+                <div class="modal-prompt event-modal-input-icons">
+                  <img src="images/calendar.svg" alt="Calendar" class="modal-icon">
+                  <img src="images/birthday.svg" alt="Birthday Present" class="modal-icon hidden">
+                  <img src="images/friends.svg" alt="Friends" class="modal-icon hidden">
+                  <img src="images/group.svg" alt="Group of People" class="modal-icon hidden">
+                  <input required type="text" placeholder="New Event" class="modal-input dark-gray">
+                </div>
+              </label>
+
+              <!-- Time -->
+              <label>
+                <div class="modal-prompt">
+                  <img src="images/clock.svg" alt="Clock" class="modal-icon">
+                  <div class="event-modal-time-input">
+                    <select name="hour" id="hour" class="event-modal-time">
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                      <option value="4">04</option>
+                      <option value="5">05</option>
+                      <option value="6">06</option>
+                      <option selected value="7">07</option>
+                      <option value="8">08</option>
+                      <option value="9">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                    :
+                    <select name="minute" id="minute" class="event-modal-time">
+                      <option selected value="00">00</option>
+                      <option value="15">15</option>
+                      <option value="30">30</option>
+                      <option value="45">45</option>
+                    </select>
+                    <select name="ampm" id="ampm" class="event-modal-time">
+                      <option value="am">AM</option>
+                      <option selected value="pm">PM</option>
+                    </select>
+                    <button class="event-modal-time modal-selected">None</button>
+
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="row event-modal-delete-div hidden">
+            <div class="col-100 center">
+              <button class="event-modal-delete">
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+      <!-- Banner -->
+      <div class="row middle day-banner">
+        <!-- Date -->
+        <div class="col-50 date-info">
+          <h3 class="date-info-date">
+            <span>January</span> <span>1</span>, <span>2025</span>
+          </h3>
+          <h6 class="date-info-holiday"> </h6>
+          <h6 class="date-info-travel"> </h6>
+        </div>
+        <!-- Weather -->
+        <div class="col-50 date-weather"></div>
+      </div>
+
+      <!-- Checklist -->
+      <div class="row checklist-height">
+        <div class="col-100 checklist-div max-height">
+          <ul>
+
+          </ul>
+          <div class="add-buttons">
+            <button class="add-event middle">+</button>
+            <button class="add-travel middle">
+              <img src="images/plane-icon.svg" alt="Plane" class="plane-icon">
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/constructors.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
